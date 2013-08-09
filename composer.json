@@ -1,5 +1,5 @@
 {
-    "name": "smsglobal/rest-client",
+    "name": "smsglobal/rest-api-client",
     "type": "library",
     "description": "Wrapper for SMSGlobal's REST API",
     "keywords": [],
