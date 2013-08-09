@@ -1,0 +1,2 @@
+#!/bin/sh
+vendor/phpdocumentor/phpdocumentor/bin/phpdoc.php -c phpdoc.xml

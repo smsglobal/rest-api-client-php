@@ -1,0 +1,27 @@
+{
+    "name": "smsglobal/class-library",
+    "type": "library",
+    "description": "Wrapper for SMSGlobal's REST API",
+    "keywords": [],
+    "homepage": "http://www.smsglobal.com/",
+    "authors": [
+        {
+            "name": "SMSGlobal",
+            "homepage": "http://www.smsglobal.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "phpdocumentor/phpdocumentor": "*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0" : {
+            "Smsglobal\\ClassLibrary" : ""
+        }
+    }
+}
+
