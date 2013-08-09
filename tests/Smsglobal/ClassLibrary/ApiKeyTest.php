@@ -1,5 +1,5 @@
 <?php
-namespace Smsglobal\ClassLibrary;
+namespace Smsglobal\RestApiClient;
 
 class ApiKeyTest extends \PHPUnit_Framework_TestCase
 {
@@ -25,7 +25,7 @@ class ApiKeyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Smsglobal\ClassLibrary\ApiKey::getAuthorizationHeader
+     * @covers Smsglobal\RestApiClient\ApiKey::getAuthorizationHeader
      */
     public function testGetAuthorizationHeader()
     {

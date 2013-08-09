@@ -1,12 +1,12 @@
 <?php
-namespace Smsglobal\ClassLibrary\Http\Response;
+namespace Smsglobal\RestApiClient\Http\Response;
 
-use Smsglobal\ClassLibrary\Http\HeaderBag;
+use Smsglobal\RestApiClient\Http\HeaderBag;
 
 /**
  * Processes a response from the http:// stream wrapper
  *
- * @package Smsglobal\ClassLibrary\Http\Response
+ * @package Smsglobal\RestApiClient\Http\Response
  */
 class Stream implements Adapter
 {

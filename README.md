@@ -14,7 +14,7 @@ To install, add the dependency to your `composer.json` file:
 ```json
 {
     "require": {
-        "smsglobal/class-library": "*"
+        "smsglobal/rest-api-client": "*"
     }
 }
 ```
@@ -22,7 +22,7 @@ To install, add the dependency to your `composer.json` file:
 And install with Composer.
 
 ```bash
-$ cd path/to/SMSGlobal/class/library
+$ cd path/to/SMSGlobal/rest/api/client
 $ composer install
 ```
 
@@ -35,7 +35,7 @@ To run unit tests or generate documentation, you'll need PHPUnit and phpDocument
 Running Unit Tests
 ------------------
 ```bash
-$ cd path/to/SMSGlobal/class/library
+$ cd path/to/SMSGlobal/rest/api/client
 $ composer install --dev
 $ phpunit
 ```
@@ -43,7 +43,7 @@ $ phpunit
 Get documentation
 -----------------
 ```bash
-$ cd path/to/SMSGlobal/class/library
+$ cd path/to/SMSGlobal/rest/api/client
 $ composer install --dev
 $ vendor/phpdocumentor/phpdocumentor/bin/phpdoc.php -c phpdoc.xml
 ```
@@ -55,16 +55,16 @@ Running Unit Tests
 // Include the Composer autoloader or use your own PSR-0 autoloader
 require 'vendor/autoload.php';
 
-use Smsglobal\ClassLibrary\ApiKey;
-use Smsglobal\ClassLibrary\Resource\Sms;
-use Smsglobal\ClassLibrary\ResourceManager;
+use Smsglobal\RestApiClient\ApiKey;
+use Smsglobal\RestApiClient\Resource\Sms;
+use Smsglobal\RestApiClient\RestApiClient;
 
 // Get an API key from SMSGlobal and insert the key and secret
 $apiKey = new ApiKey('your-api-key', 'your-api-secret');
 
 // All requests are done via a 'resource manager.' This abstracts away the REST
 // API so you can deal with it like you would an ORM
-$manager = new ResourceManager($apiKey);
+$manager = new RestApiClient($apiKey);
 
 // Now you can get objects
 $contact = $manager->get('contact', 1); // Contact resource with ID = 1

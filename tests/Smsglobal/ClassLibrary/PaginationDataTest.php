@@ -1,5 +1,5 @@
 <?php
-namespace Smsglobal\ClassLibrary;
+namespace Smsglobal\RestApiClient;
 
 class PaginationDataTest extends \PHPUnit_Framework_TestCase
 {

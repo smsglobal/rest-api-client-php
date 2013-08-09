@@ -1,10 +1,12 @@
 <?php
-namespace Smsglobal\ClassLibrary\Resource;
+namespace Smsglobal\RestApiClient\Resource;
+
+use Smsglobal\RestApiClient\RestApiClient;
 
 /**
  * A resource representing an SMSGlobal SMS
  *
- * @package Smsglobal\ClassLibrary\Resource
+ * @package Smsglobal\RestApiClient\Resource
  */
 class Sms extends Base
 {
@@ -50,7 +52,6 @@ class Sms extends Base
      * @param null|string $origin Where the SMS appears to come from. 4-11
      * characters A-Za-z0-9 if alphanumeric; 4-15 digits if numeric (if set, set
      * sharedPool to null)
-     *
      * @return $this Provides a fluent interface
      */
     public function setOrigin($origin)
@@ -79,7 +80,6 @@ class Sms extends Base
      * Sets the destination
      *
      * @param string $destination Destination mobile number. 4-15 digits
-     *
      * @return $this Provides a fluent interface
      */
     public function setDestination($destination)
@@ -104,7 +104,6 @@ class Sms extends Base
      *
      * @param string $message The SMS message. If longer than 160 characters
      * (GSM) or 70 characters (Unicode), splits into multiple SMS
-     *
      * @return $this Provides a fluent interface
      */
     public function setMessage($message)
@@ -138,11 +137,14 @@ class Sms extends Base
      * Sets the campaign
      *
      * @param Campaign|null $campaign The campaign the message is associated with (optional)
-     *
      * @return $this Provides a fluent interface
      */
     public function setCampaign($campaign)
     {
+        if (null !== $campaign && !($campaign instanceof Campaign)) {
+            $campaign = (int) $campaign;
+        }
+
         $this->campaign = $campaign;
 
         return $this;
@@ -188,5 +190,26 @@ class Sms extends Base
     public function getSharedPool()
     {
         return $this->sharedPool;
+    }
+
+    /**
+     * Shortcut that sends an SMS
+     *
+     * @param RestApiClient $manager     Manager instance to send with
+     * @param string          $origin      Origin
+     * @param string          $destination Destination
+     * @param string          $message     Message
+     * @return Sms New SMS object
+     */
+    public static function send(RestApiClient $manager, $origin, $destination, $message)
+    {
+        $sms = new Sms();
+        $sms->setOrigin($origin)
+            ->setDestination($destination)
+            ->setMessage($message);
+
+        $manager->save($sms);
+
+        return $sms;
     }
 }

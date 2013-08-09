@@ -20,7 +20,7 @@ $ignoredMethods = array(
 );
 
 foreach ($resources as $name) {
-    $class = 'Smsglobal\\ClassLibrary\\Resource\\' . $name;
+    $class = 'Smsglobal\\RestApiClient\\Resource\\' . $name;
     $methods = '';
 
     foreach (get_class_methods($class) as $method) {
@@ -39,16 +39,16 @@ foreach ($resources as $name) {
     }
 
     $php = '<?php
-namespace Smsglobal\\ClassLibrary\\Resource\\Proxy;
+namespace Smsglobal\\RestApiClient\\Resource\\Proxy;
 
-use Smsglobal\\ClassLibrary\\Resource\\' . $name . ';
-use Smsglobal\\ClassLibrary\\ResourceManager;
+use Smsglobal\\RestApiClient\\Resource\\' . $name . ';
+use Smsglobal\\RestApiClient\\RestApiClient;
 
 class ' . $name . 'Proxy extends ' . $name . '
 {
     private $manager;
 
-    public function __construct($resourceUri, ResourceManager $manager)
+    public function __construct($resourceUri, RestApiClient $manager)
     {
         $this->resourceUri = $resourceUri;
         $this->manager = $manager;
@@ -72,5 +72,5 @@ class ' . $name . 'Proxy extends ' . $name . '
 ' . $methods . '}
 ';
 
-    file_put_contents(__DIR__ . '/Smsglobal/ClassLibrary/Resource/Proxy/' . $name . 'Proxy.php', $php);
+    file_put_contents(__DIR__ . '/Smsglobal/RestApiClient/Resource/Proxy/' . $name . 'Proxy.php', $php);
 }

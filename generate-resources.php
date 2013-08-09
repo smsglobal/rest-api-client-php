@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Smsglobal\ClassLibrary\Http\Request;
+use Smsglobal\RestApiClient\Http\Request;
 
 $request = new Request('http://api2.local/v1/');
 $request->headers->set('Accept', 'application/json');
@@ -87,7 +87,7 @@ foreach ($resources as $name => $resource) {
     }
 
     $php = '<?php
-namespace Smsglobal\\ClassLibrary\\Resource;
+namespace Smsglobal\\RestApiClient\\Resource;
 
 class ' . $name . ' extends Base
 {

@@ -1,14 +1,14 @@
 <?php
-namespace Smsglobal\ClassLibrary\Resource\Proxy;
+namespace Smsglobal\RestApiClient\Resource\Proxy;
 
-use Smsglobal\ClassLibrary\Resource\Mms;
-use Smsglobal\ClassLibrary\ResourceManager;
+use Smsglobal\RestApiClient\Resource\Mms;
+use Smsglobal\RestApiClient\RestApiClient;
 
 class MmsProxy extends Mms
 {
     private $manager;
 
-    public function __construct($resourceUri, ResourceManager $manager)
+    public function __construct($resourceUri, RestApiClient $manager)
     {
         $this->resourceUri = $resourceUri;
         $this->manager = $manager;

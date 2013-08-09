@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Smsglobal\ClassLibrary\Http;
+namespace Smsglobal\RestApiClient\Http;
 
 /**
  * HeaderBag is a container for HTTP headers.

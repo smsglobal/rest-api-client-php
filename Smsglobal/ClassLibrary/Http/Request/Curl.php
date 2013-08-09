@@ -1,12 +1,12 @@
 <?php
-namespace Smsglobal\ClassLibrary\Http\Request;
+namespace Smsglobal\RestApiClient\Http\Request;
 
-use Smsglobal\ClassLibrary\Http\Response\Curl as Response;
+use Smsglobal\RestApiClient\Http\Response\Curl as Response;
 
 /**
  * Makes a request using the cURL library
  *
- * @package Smsglobal\ClassLibrary\Http\Request
+ * @package Smsglobal\RestApiClient\Http\Request
  */
 class Curl implements Adapter
 {

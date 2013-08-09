@@ -1,14 +1,14 @@
 <?php
-namespace Smsglobal\ClassLibrary\Resource\Proxy;
+namespace Smsglobal\RestApiClient\Resource\Proxy;
 
-use Smsglobal\ClassLibrary\Resource\Campaign;
-use Smsglobal\ClassLibrary\ResourceManager;
+use Smsglobal\RestApiClient\Resource\Campaign;
+use Smsglobal\RestApiClient\RestApiClient;
 
 class CampaignProxy extends Campaign
 {
     private $manager;
 
-    public function __construct($resourceUri, ResourceManager $manager)
+    public function __construct($resourceUri, RestApiClient $manager)
     {
         $this->resourceUri = $resourceUri;
         $this->manager = $manager;

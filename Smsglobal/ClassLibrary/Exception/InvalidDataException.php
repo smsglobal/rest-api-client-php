@@ -1,10 +1,10 @@
 <?php
-namespace Smsglobal\ClassLibrary\Exception;
+namespace Smsglobal\RestApiClient\Exception;
 
 /**
  * An exception thrown when attempting to save with invalid data
  *
- * @package Smsglobal\ClassLibrary\Exception
+ * @package Smsglobal\RestApiClient\Exception
  */
 class InvalidDataException extends \Exception
 {

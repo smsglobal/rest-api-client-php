@@ -11,7 +11,7 @@
         <directory>.</directory>
         <ignore>tests/*</ignore>
         <ignore>vendor/*</ignore>
-        <ignore>Smsglobal/ClassLibrary/Resource/Proxy/*</ignore>
+        <ignore>Smsglobal/RestApiClient/Resource/Proxy/*</ignore>
     </files>
     <logging>
         <paths>

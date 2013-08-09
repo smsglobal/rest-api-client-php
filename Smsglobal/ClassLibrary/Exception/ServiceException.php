@@ -1,10 +1,10 @@
 <?php
-namespace Smsglobal\ClassLibrary\Exception;
+namespace Smsglobal\RestApiClient\Exception;
 
 /**
  * An exception thrown when there is a problem accessing the REST API service
  *
- * @package Smsglobal\ClassLibrary\Exception
+ * @package Smsglobal\RestApiClient\Exception
  */
 class ServiceException extends \Exception
 {

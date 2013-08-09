@@ -1,14 +1,14 @@
 <?php
-namespace Smsglobal\ClassLibrary\Resource\Proxy;
+namespace Smsglobal\RestApiClient\Resource\Proxy;
 
-use Smsglobal\ClassLibrary\Resource\MmsAttachment;
-use Smsglobal\ClassLibrary\ResourceManager;
+use Smsglobal\RestApiClient\Resource\MmsAttachment;
+use Smsglobal\RestApiClient\RestApiClient;
 
 class MmsAttachmentProxy extends MmsAttachment
 {
     private $manager;
 
-    public function __construct($resourceUri, ResourceManager $manager)
+    public function __construct($resourceUri, RestApiClient $manager)
     {
         $this->resourceUri = $resourceUri;
         $this->manager = $manager;

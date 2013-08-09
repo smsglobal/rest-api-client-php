@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Smsglobal\ClassLibrary\Http;
+namespace Smsglobal\RestApiClient\Http;
 
 class HeaderBagTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Smsglobal\ClassLibrary\Http\HeaderBag::__construct
+     * @covers Smsglobal\RestApiClient\Http\HeaderBag::__construct
      */
     public function testConstructor()
     {
@@ -66,7 +66,7 @@ class HeaderBagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Smsglobal\ClassLibrary\Http\HeaderBag::all
+     * @covers Smsglobal\RestApiClient\Http\HeaderBag::all
      */
     public function testAll()
     {
@@ -78,7 +78,7 @@ class HeaderBagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Smsglobal\ClassLibrary\Http\HeaderBag::replace
+     * @covers Smsglobal\RestApiClient\Http\HeaderBag::replace
      */
     public function testReplace()
     {
@@ -90,7 +90,7 @@ class HeaderBagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Smsglobal\ClassLibrary\Http\HeaderBag::get
+     * @covers Smsglobal\RestApiClient\Http\HeaderBag::get
      */
     public function testGet()
     {
@@ -118,7 +118,7 @@ class HeaderBagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Smsglobal\ClassLibrary\Http\HeaderBag::contains
+     * @covers Smsglobal\RestApiClient\Http\HeaderBag::contains
      */
     public function testContains()
     {
@@ -185,7 +185,7 @@ class HeaderBagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Smsglobal\ClassLibrary\Http\HeaderBag::getIterator
+     * @covers Smsglobal\RestApiClient\Http\HeaderBag::getIterator
      */
     public function testGetIterator()
     {
@@ -202,7 +202,7 @@ class HeaderBagTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Smsglobal\ClassLibrary\Http\HeaderBag::count
+     * @covers Smsglobal\RestApiClient\Http\HeaderBag::count
      */
     public function testCount()
     {

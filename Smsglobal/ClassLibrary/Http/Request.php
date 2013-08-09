@@ -1,16 +1,16 @@
 <?php
-namespace Smsglobal\ClassLibrary\Http;
+namespace Smsglobal\RestApiClient\Http;
 
-use Smsglobal\ClassLibrary\Http\Response\Adapter;
+use Smsglobal\RestApiClient\Http\Response\Adapter;
 
 /**
  * A class for dealing with HTTP requests and responses
  *
- * @package Smsglobal\ClassLibrary\Http
+ * @package Smsglobal\RestApiClient\Http
  */
 class Request
 {
-    const DEFAULT_ADAPTER = 'Smsglobal\\ClassLibrary\\Http\\Request\\Curl';
+    const DEFAULT_ADAPTER = 'Smsglobal\\RestApiClient\\Http\\Request\\Curl';
 
     /**
      * Class name of the adapter to use

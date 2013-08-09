@@ -1,12 +1,12 @@
 <?php
-namespace Smsglobal\ClassLibrary\Http\Response;
+namespace Smsglobal\RestApiClient\Http\Response;
 
-use Smsglobal\ClassLibrary\Http\HeaderBag;
+use Smsglobal\RestApiClient\Http\HeaderBag;
 
 /**
  * An interface for HTTP responses using different HTTP libraries
  *
- * @package Smsglobal\ClassLibrary\Http\Response
+ * @package Smsglobal\RestApiClient\Http\Response
  */
 interface Adapter
 {

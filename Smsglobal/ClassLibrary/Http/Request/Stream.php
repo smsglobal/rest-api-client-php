@@ -1,12 +1,12 @@
 <?php
-namespace Smsglobal\ClassLibrary\Http\Request;
+namespace Smsglobal\RestApiClient\Http\Request;
 
-use Smsglobal\ClassLibrary\Http\Response\Stream as Response;
+use Smsglobal\RestApiClient\Http\Response\Stream as Response;
 
 /**
  * Makes a HTTP request using the http:// stream wrapper
  *
- * @package Smsglobal\ClassLibrary\Http\Request
+ * @package Smsglobal\RestApiClient\Http\Request
  */
 class Stream implements Adapter
 {

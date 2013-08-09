@@ -1,10 +1,10 @@
 <?php
-namespace Smsglobal\ClassLibrary\Resource;
+namespace Smsglobal\RestApiClient\Resource;
 
 /**
  * A resource representing an SMSGlobal MNP lookup
  *
- * @package Smsglobal\ClassLibrary\Resource
+ * @package Smsglobal\RestApiClient\Resource
  */
 class Lookup extends Base
 {

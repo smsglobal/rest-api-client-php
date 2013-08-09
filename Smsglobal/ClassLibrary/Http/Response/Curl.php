@@ -1,13 +1,13 @@
 <?php
-namespace Smsglobal\ClassLibrary\Http\Response;
+namespace Smsglobal\RestApiClient\Http\Response;
 
-use Smsglobal\ClassLibrary\Exception\ServiceException;
-use Smsglobal\ClassLibrary\Http\HeaderBag;
+use Smsglobal\RestApiClient\Exception\ServiceException;
+use Smsglobal\RestApiClient\Http\HeaderBag;
 
 /**
  * Processes a cURL response
  *
- * @package Smsglobal\ClassLibrary\Http\Response
+ * @package Smsglobal\RestApiClient\Http\Response
  */
 class Curl implements Adapter
 {

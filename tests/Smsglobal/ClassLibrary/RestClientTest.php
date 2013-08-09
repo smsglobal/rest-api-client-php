@@ -1,8 +1,8 @@
 <?php
-namespace Smsglobal\ClassLibrary;
+namespace Smsglobal\RestApiClient;
 
-use Smsglobal\ClassLibrary\Http\HeaderBag;
-use Smsglobal\ClassLibrary\Http\Response\Adapter;
+use Smsglobal\RestApiClient\Http\HeaderBag;
+use Smsglobal\RestApiClient\Http\Response\Adapter;
 
 class AdapterStub implements Adapter
 {
@@ -29,7 +29,7 @@ class AdapterStub implements Adapter
     }
 }
 
-class ResourceManagerTest extends \PHPUnit_Framework_TestCase
+class RestClientTest extends \PHPUnit_Framework_TestCase
 {
     public function testHandleStatusCode()
     {
@@ -42,18 +42,18 @@ class ResourceManagerTest extends \PHPUnit_Framework_TestCase
             202 => null,
             204 => null,
             410 => null,
-            400 => 'Smsglobal\\ClassLibrary\\Exception\\InvalidDataException',
-            401 => 'Smsglobal\\ClassLibrary\\Exception\\AuthorizationException',
-            404 => 'Smsglobal\\ClassLibrary\\Exception\\ResourceNotFoundException',
-            405 => 'Smsglobal\\ClassLibrary\\Exception\\MethodNotAllowedException',
-            500 => 'Smsglobal\\ClassLibrary\\Exception\\ServiceException',
-            502 => 'Smsglobal\\ClassLibrary\\Exception\\ServiceException',
-            503 => 'Smsglobal\\ClassLibrary\\Exception\\ServiceException',
-            504 => 'Smsglobal\\ClassLibrary\\Exception\\ServiceException',
+            400 => 'Smsglobal\\RestApiClient\\Exception\\InvalidDataException',
+            401 => 'Smsglobal\\RestApiClient\\Exception\\AuthorizationException',
+            404 => 'Smsglobal\\RestApiClient\\Exception\\ResourceNotFoundException',
+            405 => 'Smsglobal\\RestApiClient\\Exception\\MethodNotAllowedException',
+            500 => 'Smsglobal\\RestApiClient\\Exception\\ServiceException',
+            502 => 'Smsglobal\\RestApiClient\\Exception\\ServiceException',
+            503 => 'Smsglobal\\RestApiClient\\Exception\\ServiceException',
+            504 => 'Smsglobal\\RestApiClient\\Exception\\ServiceException',
             418 => 'Exception',
         );
 
-        $manager = new ResourceManager(new ApiKey('', ''));
+        $manager = new RestApiClient(new ApiKey('', ''));
         $method = new \ReflectionClass($manager);
         $method = $method->getMethod('handleStatusCode');
         $method->setAccessible(true);
@@ -84,7 +84,7 @@ class ResourceManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetTimeZone()
     {
-        $manager = new ResourceManager(new ApiKey('', ''));
+        $manager = new RestApiClient(new ApiKey('', ''));
         $method = new \ReflectionClass($manager);
         $method = $method->getMethod('getTimeZone');
         $method->setAccessible(true);

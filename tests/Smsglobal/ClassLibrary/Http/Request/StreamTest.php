@@ -1,11 +1,11 @@
 <?php
-namespace Smsglobal\ClassLibrary\Http\Request;
+namespace Smsglobal\RestApiClient\Http\Request;
 
-use Smsglobal\ClassLibrary\Http\Request;
+use Smsglobal\RestApiClient\Http\Request;
 
 class StreamTest extends \PHPUnit_Framework_TestCase
 {
-    const ADAPTER = 'Smsglobal\\ClassLibrary\\Http\\Request\\Stream';
+    const ADAPTER = 'Smsglobal\\RestApiClient\\Http\\Request\\Stream';
 
     public function testGet()
     {

@@ -1,5 +1,5 @@
 {
-    "name": "smsglobal/class-library",
+    "name": "smsglobal/rest-client",
     "type": "library",
     "description": "Wrapper for SMSGlobal's REST API",
     "keywords": [],
@@ -20,8 +20,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-0" : {
-            "Smsglobal\\ClassLibrary" : ""
+            "Smsglobal\\RestApiClient" : ""
         }
     }
 }
-

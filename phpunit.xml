@@ -21,9 +21,9 @@
         <blacklist>
             <directory>tests</directory>
             <directory>vendor</directory>
-            <directory>Smsglobal\ClassLibrary\Resource\Proxy</directory>
+            <directory>Smsglobal\RestApiClient\Resource\Proxy</directory>
             <!-- Ignore this because it's from Symfony -->
-            <file>Smsglobal/ClassLibrary/Http/HeaderBag.php</file>
+            <file>Smsglobal/RestApiClient/Http/HeaderBag.php</file>
         </blacklist>
     </filter>
 </phpunit>

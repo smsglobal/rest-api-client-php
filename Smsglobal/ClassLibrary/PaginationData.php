@@ -1,11 +1,11 @@
 <?php
-namespace Smsglobal\ClassLibrary;
+namespace Smsglobal\RestApiClient;
 
 /**
  * Utility for making the REST API's resource list response 'meta' object easier
  * to use. Handy for displaying page numbers, etc.
  *
- * @package Smsglobal\ClassLibrary
+ * @package Smsglobal\RestApiClient
  */
 class PaginationData
 {

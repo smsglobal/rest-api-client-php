@@ -1,11 +1,11 @@
 <?php
-namespace Smsglobal\ClassLibrary\Http;
+namespace Smsglobal\RestApiClient\Http;
 
-use Smsglobal\ClassLibrary\Http\Request;
+use Smsglobal\RestApiClient\Http\Request;
 
 class CurlTest extends \PHPUnit_Framework_TestCase
 {
-    const ADAPTER = 'Smsglobal\\ClassLibrary\\Http\\Request\\Curl';
+    const ADAPTER = 'Smsglobal\\RestApiClient\\Http\\Request\\Curl';
 
     public function testStatusCode()
     {

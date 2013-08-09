@@ -1,10 +1,10 @@
 <?php
-namespace Smsglobal\ClassLibrary\Resource;
+namespace Smsglobal\RestApiClient\Resource;
 
 /**
  * A resource representing an SMSGlobal incoming MMS attachment
  *
- * @package Smsglobal\ClassLibrary\Resource
+ * @package Smsglobal\RestApiClient\Resource
  */
 class MmsIncomingAttachment extends Base
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Smsglobal\ClassLibrary;
+namespace Smsglobal\RestApiClient;
 
 class VersionTest extends \PHPUnit_Framework_TestCase
 {
