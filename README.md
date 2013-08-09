@@ -64,16 +64,16 @@ $apiKey = new ApiKey('your-api-key', 'your-api-secret');
 
 // All requests are done via a 'resource manager.' This abstracts away the REST
 // API so you can deal with it like you would an ORM
-$manager = new RestApiClient($apiKey);
+$rest = new RestApiClient($apiKey);
 
 // Now you can get objects
-$contact = $manager->get('contact', 1); // Contact resource with ID = 1
+$contact = $rest->get('contact', 1); // Contact resource with ID = 1
 // Edit them
 $contact->setMsisdn('61447100250');
 // And save them
-$manager->save($contact);
+$rest->save($contact);
 // Or delete them
-$manager->delete($contact);
+$rest->delete($contact);
 
 // You can also instantiate new resources
 $sms = new Sms();
@@ -81,12 +81,15 @@ $sms->setDestination('61447100250')
     ->setOrigin('Test')
     ->setMessage('Hello World');
 // And save them
-$manager->save($sms);
+$rest->save($sms);
 // When a new object is saved, the ID gets populated (it was null before)
 echo $sms->getId(); // integer
 
+// To send an SMS, you can use this shortcut
+Sms::send($rest, 'Test', '61447100250', 'Hello World');
+
 // You can get a list of available resources
-$list = $manager->getList('sms');
+$list = $rest->getList('sms');
 
 foreach ($list->objects as $resource) {
     // ...
@@ -97,7 +100,7 @@ echo $list->meta->getTotalPages(); // integer
 
 // Lists can be filtered
 // e.g. contacts belonging to group ID 1
-$manager->getList('contact', 0, 20, array('group' => 1));
+$rest->getList('contact', 0, 20, array('group' => 1));
 ```
 
 Notes
