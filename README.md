@@ -57,6 +57,7 @@ require 'vendor/autoload.php';
 
 use Smsglobal\ClassLibrary\ApiKey;
 use Smsglobal\ClassLibrary\Resource\Sms;
+use Smsglobal\ClassLibrary\ResourceManager;
 
 // Get an API key from SMSGlobal and insert the key and secret
 $apiKey = new ApiKey('your-api-key', 'your-api-secret');
