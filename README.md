@@ -77,8 +77,8 @@ $manager->delete($contact);
 
 // You can also instantiate new resources
 $sms = new Sms();
-$sms->setDestination('61447100250');
-    ->setOrigin('Test');
+$sms->setDestination('61447100250')
+    ->setOrigin('Test')
     ->setMessage('Hello World');
 // And save them
 $manager->save($sms);
