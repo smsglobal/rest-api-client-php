@@ -15,8 +15,7 @@ namespace Smsglobal\RestApiClient\Http;
  * HeaderBag is a container for HTTP headers.
  *
  * @author Fabien Potencier <fabien@symfony.com>
- *
- * @api
+ * @package Smsglobal\RestApiClient\Http
  */
 class HeaderBag implements \IteratorAggregate, \Countable
 {
@@ -27,8 +26,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * Constructor.
      *
      * @param array $headers An array of HTTP headers
-     *
-     * @api
      */
     public function __construct(array $headers = array())
     {
@@ -67,8 +64,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * Returns the headers.
      *
      * @return array An array of headers
-     *
-     * @api
      */
     public function all()
     {
@@ -79,8 +74,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * Returns the parameter keys.
      *
      * @return array An array of parameter keys
-     *
-     * @api
      */
     public function keys()
     {
@@ -91,8 +84,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * Replaces the current HTTP headers by a new set.
      *
      * @param array $headers An array of HTTP headers
-     *
-     * @api
      */
     public function replace(array $headers = array())
     {
@@ -104,8 +95,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * Adds new headers the current HTTP headers set.
      *
      * @param array $headers An array of HTTP headers
-     *
-     * @api
      */
     public function add(array $headers)
     {
@@ -122,8 +111,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * @param Boolean $first   Whether to return the first value or all header values
      *
      * @return string|array The first header value if $first is true, an array of values otherwise
-     *
-     * @api
      */
     public function get($key, $default = null, $first = true)
     {
@@ -150,8 +137,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * @param string       $key     The key
      * @param string|array $values  The value or an array of values
      * @param Boolean      $replace Whether to replace the actual value or not (true by default)
-     *
-     * @api
      */
     public function set($key, $values, $replace = true)
     {
@@ -176,8 +161,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * @param string $key The HTTP header
      *
      * @return Boolean true if the parameter exists, false otherwise
-     *
-     * @api
      */
     public function has($key)
     {
@@ -191,8 +174,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * @param string $value The HTTP value
      *
      * @return Boolean true if the value is contained in the header, false otherwise
-     *
-     * @api
      */
     public function contains($key, $value)
     {
@@ -203,8 +184,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * Removes a header.
      *
      * @param string $key The HTTP header name
-     *
-     * @api
      */
     public function remove($key)
     {
@@ -226,8 +205,6 @@ class HeaderBag implements \IteratorAggregate, \Countable
      * @return null|\DateTime The parsed DateTime or the default value if the header does not exist
      *
      * @throws \RuntimeException When the HTTP header is not parseable
-     *
-     * @api
      */
     public function getDate($key, \DateTime $default = null)
     {
