@@ -23,7 +23,7 @@ And install with Composer.
 
 ```bash
 $ cd path/to/SMSGlobal/rest/api/client
-$ composer install
+$ composer install --no-dev
 ```
 
 Not using Composer?
@@ -36,15 +36,17 @@ Running Unit Tests
 ------------------
 ```bash
 $ cd path/to/SMSGlobal/rest/api/client
-$ composer install --dev
+$ composer install
 $ phpunit
 ```
 
 Get documentation
 -----------------
+Documentation is available on [the SMSGlobal website](http://www.smsglobal.com/docs/rest-api-client-php/), or you can generate it yourself:
+
 ```bash
 $ cd path/to/SMSGlobal/rest/api/client
-$ composer install --dev
+$ composer install
 $ vendor/phpdocumentor/phpdocumentor/bin/phpdoc.php -c phpdoc.xml
 ```
 
