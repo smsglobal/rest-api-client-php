@@ -238,6 +238,8 @@ class Campaign extends Base
     }
 
     /**
+     * Gets the origin
+     *
      * @return string
      */
     public function getOrigin()
