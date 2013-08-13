@@ -78,14 +78,6 @@ class Curl implements Adapter
     }
 
     /**
-     * Destructor. Closes cURL handle if it is still open
-     */
-    public function __destruct()
-    {
-        $this->closeHandle();
-    }
-
-    /**
      * {@inheritdoc}
      */
     public function getContent()
@@ -124,22 +116,8 @@ class Curl implements Adapter
                 $this->handle,
                 CURLINFO_HTTP_CODE
             );
-
-            // We don't need this any more
-            $this->closeHandle();
         }
 
         return $this->statusCode;
-    }
-
-    /**
-     * Closes the cURL handle if its still open
-     */
-    protected function closeHandle()
-    {
-        if (isset($this->handle)) {
-            curl_close($this->handle);
-            unset($this->handle);
-        }
     }
 }
