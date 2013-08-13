@@ -4,6 +4,7 @@
     "description": "Wrapper for SMSGlobal's REST API",
     "keywords": [],
     "homepage": "http://www.smsglobal.com/",
+    "license": "MIT",
     "authors": [
         {
             "name": "SMSGlobal",
