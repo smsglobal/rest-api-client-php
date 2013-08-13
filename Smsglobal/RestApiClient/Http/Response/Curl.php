@@ -69,7 +69,7 @@ class Curl implements Adapter
         // Check for an error
         $error = curl_errno($handle);
         if (!in_array($error, self::$ignoredErrors)) {
-            throw new ServiceException($error . ': ' . curl_error($handle), $error);
+            throw new ServiceException(curl_error($handle), $error);
         }
 
         $parts = explode("\r\n\r\n", $parts, 2);

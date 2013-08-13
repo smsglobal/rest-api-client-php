@@ -64,6 +64,7 @@ class Curl implements Adapter
         curl_setopt($handle, CURLOPT_URL, $url);
         curl_setopt($handle, CURLOPT_CUSTOMREQUEST, $method);
         curl_setopt($handle, CURLOPT_HTTPHEADER, $curlHeaders);
+        curl_setopt($handle, CURLOPT_NOBODY, 'HEAD' === $method);
 
         if (null !== $content) {
             curl_setopt($handle, CURLOPT_POSTFIELDS, $content);

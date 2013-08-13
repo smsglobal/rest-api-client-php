@@ -107,12 +107,6 @@ class Request
         /** @var Request\Adapter $adapter */
         $adapter = new $this->adapter();
 
-        if ('HEAD' === $this->method) {
-            // Need to force the connection to close (HTTP 1.1), otherwise it
-            // may block
-            $this->headers->set('Connection', 'Close');
-        }
-
         if (null !== $body && !$this->headers->has('content-type')) {
             throw new \RuntimeException('Attempting to send data without setting a Content-Type header');
         }
