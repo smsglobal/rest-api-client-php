@@ -64,7 +64,7 @@ use Smsglobal\RestApiClient\RestApiClient;
 // Get an API key from SMSGlobal and insert the key and secret
 $apiKey = new ApiKey('your-api-key', 'your-api-secret');
 
-// All requests are done via a 'resource manager.' This abstracts away the REST
+// All requests are done via a 'REST API client.' This abstracts away the REST
 // API so you can deal with it like you would an ORM
 $rest = new RestApiClient($apiKey);
 
@@ -87,8 +87,9 @@ $rest->save($sms);
 // When a new object is saved, the ID gets populated (it was null before)
 echo $sms->getId(); // integer
 
-// To send an SMS, you can use this shortcut
-Sms::send($rest, 'Test', '61447100250', 'Hello World');
+// For an SMS, saving also sends the message, so you can use a more meaningful
+// keyword for it
+$sms->send($rest);
 
 // You can get a list of available resources
 $list = $rest->getList('sms');

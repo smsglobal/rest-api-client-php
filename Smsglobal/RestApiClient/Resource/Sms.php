@@ -195,21 +195,11 @@ class Sms extends Base
     /**
      * Shortcut that sends an SMS
      *
-     * @param RestApiClient $manager     Manager instance to send with
-     * @param string          $origin      Origin
-     * @param string          $destination Destination
-     * @param string          $message     Message
-     * @return Sms New SMS object
+     * @param RestApiClient $rest REST API client instance to send with
+     * @return $this Provides a fluent interface
      */
-    public static function send(RestApiClient $manager, $origin, $destination, $message)
+    public function send(RestApiClient $rest)
     {
-        $sms = new Sms();
-        $sms->setOrigin($origin)
-            ->setDestination($destination)
-            ->setMessage($message);
-
-        $manager->save($sms);
-
-        return $sms;
+        return $rest->save($this);
     }
 }

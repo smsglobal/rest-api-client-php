@@ -53,8 +53,8 @@ class RestClientTest extends \PHPUnit_Framework_TestCase
             418 => 'Exception',
         );
 
-        $manager = new RestApiClient(new ApiKey('', ''));
-        $method = new \ReflectionClass($manager);
+        $rest = new RestApiClient(new ApiKey('', ''));
+        $method = new \ReflectionClass($rest);
         $method = $method->getMethod('handleStatusCode');
         $method->setAccessible(true);
 
@@ -62,7 +62,7 @@ class RestClientTest extends \PHPUnit_Framework_TestCase
             $response->setStatusCode($statusCode);
 
             try {
-                $method->invoke($manager, $response);
+                $method->invoke($rest, $response);
             } catch (\Exception $ex) {
                 if (null === $expectedException) {
                     $this->fail('Status code threw unexpected exception');
@@ -84,13 +84,13 @@ class RestClientTest extends \PHPUnit_Framework_TestCase
 
     public function testGetTimeZone()
     {
-        $manager = new RestApiClient(new ApiKey('', ''));
-        $method = new \ReflectionClass($manager);
+        $rest = new RestApiClient(new ApiKey('', ''));
+        $method = new \ReflectionClass($rest);
         $method = $method->getMethod('getTimeZone');
         $method->setAccessible(true);
 
-        $timeZone = $method->invoke($manager);
+        $timeZone = $method->invoke($rest);
         $this->assertInstanceOf('DateTimeZone', $timeZone);
-        $this->assertSame($timeZone, $method->invoke($manager));
+        $this->assertSame($timeZone, $method->invoke($rest));
     }
 }

@@ -6,12 +6,12 @@ use Smsglobal\RestApiClient\RestApiClient;
 
 class MmsIncomingAttachmentProxy extends MmsIncomingAttachment
 {
-    private $manager;
+    private $rest;
 
-    public function __construct($resourceUri, RestApiClient $manager)
+    public function __construct($resourceUri, RestApiClient $rest)
     {
         $this->resourceUri = $resourceUri;
-        $this->manager = $manager;
+        $this->rest = $rest;
 
         // Get the ID from the resource URI
         // /v1/resource/id/ -> id
@@ -21,11 +21,11 @@ class MmsIncomingAttachmentProxy extends MmsIncomingAttachment
 
     private function load()
     {
-        if (isset($this->manager)) {
-            $options = $this->manager->get($this->getResourceName(), $this->id);
+        if (isset($this->rest)) {
+            $options = $this->rest->get($this->getResourceName(), $this->id);
             $this->setOptions($options);
 
-            unset($this->manager);
+            unset($this->rest);
         }
     }
 
