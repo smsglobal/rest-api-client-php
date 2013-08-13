@@ -1,6 +1,8 @@
 <?php
 namespace Smsglobal\RestApiClient\Resource;
 
+use Smsglobal\RestApiClient\RestApiClient;
+
 /**
  * A resource representing an SMSGlobal MMS
  *
@@ -192,5 +194,16 @@ class Mms extends Base
     public function getAttachments()
     {
         return $this->attachments;
+    }
+
+    /**
+     * Shortcut that sends an SMS
+     *
+     * @param RestApiClient $rest REST API client instance to send with
+     * @return $this Provides a fluent interface
+     */
+    public function send(RestApiClient $rest)
+    {
+        return $rest->save($this);
     }
 }
