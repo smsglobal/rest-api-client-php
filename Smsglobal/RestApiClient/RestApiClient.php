@@ -209,13 +209,10 @@ class RestApiClient
     public function save(Base $resource)
     {
         $id = $resource->getId();
-        $uri = $this->getResourceUri($resource, $id);
-
-        $method = null === $id ? 'POST' : 'PATCH';
+        $resourceName = $resource->getResourceName();
+        $uri = $this->getResourceUri($resourceName, $id);
 
         $data = new \stdClass();
-
-        $resourceName = $resource->getResourceName();
 
         $schema = $this->getSchema();
 
@@ -232,8 +229,10 @@ class RestApiClient
                 $value = $value->format(\DateTime::ISO8601);
             }
 
-            $data->name = $value;
+            $data->$name = $value;
         }
+
+        $method = null === $id ? 'POST' : 'PATCH';
 
         // This will throw an exception if the request went bad
         /** @var Adapter $response */
@@ -363,13 +362,13 @@ class RestApiClient
         $content = null,
         $returnResponse = false
     ) {
-        $uri = sprintf(
+        $fullUri = sprintf(
             'http%s://%s%s',
             $this->useSsl ? 's' : '',
             $this->host,
             $uri
         );
-        $request = new Request($uri);
+        $request = new Request($fullUri);
         $request->headers->set('Accept', 'application/json');
         $this->setAuthorizationHeader($request, $method, $uri);
 
