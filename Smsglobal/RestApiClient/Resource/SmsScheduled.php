@@ -132,15 +132,4 @@ class SmsScheduled extends Base
     {
         return $this->message;
     }
-
-    /**
-     * Shortcut that sends an SMS
-     *
-     * @param RestApiClient $rest REST API client instance to send with
-     * @return $this Provides a fluent interface
-     */
-    public function send(RestApiClient $rest)
-    {
-        return $rest->save($this);
-    }
 }

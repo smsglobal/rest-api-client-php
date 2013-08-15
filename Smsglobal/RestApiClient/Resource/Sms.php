@@ -200,6 +200,8 @@ class Sms extends Base
      */
     public function send(RestApiClient $rest)
     {
+        // Force a new object to be created
+        $this->id = null;
         return $rest->save($this);
     }
 }
