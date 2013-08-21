@@ -19,12 +19,6 @@ class PrerequisitesTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(function_exists('apc_fetch'), 'APC extension is not installed (not required, but good for performance)');
     }
 
-    public function testUtf8()
-    {
-        $this->assertTrue(function_exists('mb_internal_encoding'), 'MB extension is not installed');
-        $this->assertTrue('UTF-8' === mb_internal_encoding(), 'MB must be in UTF-8 mode');
-    }
-
     public function testSha256()
     {
         $this->assertContains('sha256', hash_algos(), 'sha256 hash algorithm is not supported');
