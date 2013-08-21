@@ -44,7 +44,7 @@ class ApiKeyTest extends \PHPUnit_Framework_TestCase
         $method = $reflection->getMethod('hashRequest');
         $method->setAccessible(true);
 
-        $args = [
+        $args = array(
             1375000000,
             'random-nonce',
             'GET',
@@ -52,7 +52,7 @@ class ApiKeyTest extends \PHPUnit_Framework_TestCase
             'api.smsglobal.com',
             443,
             '',
-        ];
+        );
 
         $hash = $method->invokeArgs($apiKey, $args);
 
