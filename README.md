@@ -22,7 +22,7 @@ To install, add the dependency to your `composer.json` file:
 And install with Composer.
 
 ```bash
-$ cd path/to/SMSGlobal/rest/api/client
+$ cd path/to/your/project
 $ composer install --no-dev
 ```
 
