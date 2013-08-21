@@ -224,7 +224,7 @@ class RestApiClient
                 if ($value instanceof Base) {
                     $value = $value->getId();
                 }
-            } elseif ('datetime' === $field->type) {
+            } elseif ('datetime' === $field->type && null !== $value) {
                 /** @var \DateTime $value */
                 $value = $value->format(\DateTime::ISO8601);
             }
