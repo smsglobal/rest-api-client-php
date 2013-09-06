@@ -314,7 +314,7 @@ class RestApiClient
             case 400:
                 // Bad Request
                 throw new Exception\InvalidDataException(
-                    (array) json_decode($response->getContent()),
+                    (array) json_decode($response->getContent())->errors,
                     $statusCode
                 );
             case 401:
