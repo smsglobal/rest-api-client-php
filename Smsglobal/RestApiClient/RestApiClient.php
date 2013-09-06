@@ -112,7 +112,7 @@ class RestApiClient
             return true;
         }
 
-        $uri = $this->getResourceUri($resource, $id);
+        $uri = $this->getResourceUri($resource->getResourceName(), $id);
         $this->makeRequest($uri, 'DELETE');
 
         // If it gets here, the request was accepted/OK
