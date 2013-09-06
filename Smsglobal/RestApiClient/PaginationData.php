@@ -57,6 +57,18 @@ class PaginationData
     protected $totalPages;
 
     /**
+     * Whether there is a next page
+     * @var bool
+     */
+    protected $hasNext;
+
+    /**
+     * Whether there is a previous page
+     * @var bool
+     */
+    protected $hasPrevious;
+
+    /**
      * Handy function for calculating the value for the list offset based on a
      * page number.
      *
@@ -165,5 +177,50 @@ class PaginationData
     public function getTotalCount()
     {
         return $this->totalCount;
+    }
+
+    /**
+     * Gets an array of page numbers on either side of the current page. Useful
+     * for generating pagination links
+     *
+     * @param  int   $pagesEitherSide
+     * @return array
+     */
+    public function getPageRange($pagesEitherSide = 3)
+    {
+        $currentPage = $this->getCurrentPage();
+        $min = max(1, $currentPage - $pagesEitherSide);
+        $max = min($this->getTotalPages(), $currentPage + $pagesEitherSide);
+
+        return range($min, $max);
+    }
+
+    /**
+     * Gets whether there is a next page. Useful for generating pagination links
+     *
+     * @return bool
+     */
+    public function hasNext()
+    {
+        if (null === $this->hasNext) {
+            $this->hasNext = $this->getCurrentPage() !== $this->getTotalPages();
+        }
+
+        return $this->hasNext;
+    }
+
+    /**
+     * Gets whether there is a previous page. Useful for generating pagination
+     * links
+     *
+     * @return bool
+     */
+    public function hasPrevious()
+    {
+        if (null === $this->hasPrevious) {
+            $this->hasPrevious = 1 !== $this->getCurrentPage();
+        }
+
+        return $this->hasPrevious;
     }
 }
