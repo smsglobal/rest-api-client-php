@@ -470,8 +470,8 @@ class RestApiClient
         $schema = $this->getSchema();
 
         foreach ($schema[$resource] as $name => $field) {
-            $data->name = $this->convertFieldValue(
-                $data->name,
+            $data->$name = $this->convertFieldValue(
+                $data->$name,
                 $field->type,
                 $name
             );
