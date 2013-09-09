@@ -465,7 +465,7 @@ class RestApiClient
      */
     protected function instantiateResource($resource, $data)
     {
-        $class = sprintf('%s\\Resource\\%s', __NAMESPACE__, $resource);
+        $class = sprintf('%s\\Resource\\%s', __NAMESPACE__, ucfirst($resource));
 
         $schema = $this->getSchema();
 
