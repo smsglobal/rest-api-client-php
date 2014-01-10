@@ -245,9 +245,9 @@ class RestApiClient
             // A new resource was created. Extract the ID from the Location
             // header (resource URI)
             // Remove trailing slash
-            $id = substr($id, 0, -1);
+            $id = rtrim($id, '/');
             // Get everything after the last slash; cast to int
-            $id = (int) substr($id, strrpos('/', $id) + 1, -1);
+            $id = (int) substr($id, strrpos($id, '/') + 1);
 
             $resource->setId($id);
 
